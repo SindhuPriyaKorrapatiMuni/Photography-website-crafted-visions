@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" >
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>craftedvisions</title>
+        <link rel="stylesheet" href="css/style1.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="icon" type="image/x-icon" href="css/icons8-favicon-16.png">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+	<div class="nav-links">
+		<ul>
+			<li><a href="index.html">Home</a></li>
+			<li class="active"><a href="gallery.html">Gallery</a></li>
+			<li><a href="aboutus.html">AboutUs</a></li>
+			<li><a href="index.php">Login</a></li>
+		</ul>
+	</div>
+	<body>
+		<div class="search-container">
+			<input type="text" id="search-input" placeholder="Search images...">
+			<button id="search-button">search<i class="fa-solid fa-search"></i></button>
+		</div>	
+		<h1>Nature Photography</h1>
+		<div class="container">
+			<img src="images/img16.jpg" alt="birds">
+			<img src="images/reindeer.jpg" alt="wildlife">	
+			<img src="images/img10.jpg" alt="marine">
+			<img src="images/img13.jpg" alt="birds">
+			<img src="images/img10.jpg" alt="marine">
+			<img src="images/img9.jpg" alt="wildlife">	
+			<img src="images/img4.jpg" alt="wildlife">					
+		</div>
+		<form action="upload.php" method="post" enctype="multipart/form-data">
+            <div class="upload-btn-wrapper">
+                <button class="btn"><i class="fa-solid fa-circle-plus"></i> Upload Image</button>
+                <input type="file" name="image" id="image" accept="image/*">
+            </div>
+            <input type="submit" value="Upload Image" name="submit">
+        </form>
+	<section class="footer">
+		<div class="company-name">
+			<p>Crafted Visions</p>
+		</div>
+		<div class="footercontainer">
+		 <div class="socialIcons">
+			 <a href="" aria-label="icon of facebook"><i class="fa-brands fa-facebook"></i></a>
+			 <a href="" aria-label="icon of twitter"><i class="fa-brands fa-twitter"></i></a>
+			 <a href="" aria-label="icon of instagram"><i class="fa-brands fa-instagram"></i></a>
+		 </div>
+		 <div class="footerNav">
+			 <ul>
+			 <li><a href="index.html" >Home</a></li>
+			 <li><a href="gallery.html"class="active">Gallery</a></li>
+			 <li><a href="aboutus.html">AboutUs</a></li>
+			 <li><a href="signup.html">SignUp</a></li>
+		 </ul>
+		 </div>
+		 <div class="foo">
+			 <p>Have a Great Day!</p>
+		 </div>
+	 </div>
+ </section>
+ <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const searchButton = document.getElementById("search-button");
+        const searchInput = document.getElementById("search-input");
+        const images = document.querySelectorAll(".container img");
+
+        searchButton.addEventListener("click", function () {
+            const searchTerm = searchInput.value.toLowerCase();
+            
+            images.forEach(function (image) {
+                const altText = image.getAttribute("alt").toLowerCase();
+                
+                if (altText.includes(searchTerm)) {
+                    image.style.display = "block";
+                } else {
+                    image.style.display = "none";
+                }
+            });
+        });
+    });
+</script>
+</body>
+</html>
